@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="25dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details_eve_work"
+    android:orientation="vertical"
+    android:background="@drawable/main_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/highlightTV"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="#CCCCCC"
+        android:id="@+id/upcomingtextview"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_view"
+        android:textSize="20dp"
+        android:hint="Loading...."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#DDCCCCCC"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="#CCCCCC"
+        android:id="@+id/pasttextview" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_view_2"
+        android:textSize="20dp"
+        android:hint="Loading...."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#DDCCCCCC"/>
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More on calender..."
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="casual"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="15dp"/>
+
+        <CalendarView
+            android:backgroundTint="@android:color/white"
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/CalenderViewCustom"
+            android:dateTextAppearance="@style/CalenderViewDateCustomText"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>
+
+    </LinearLayout>
+</ScrollView>

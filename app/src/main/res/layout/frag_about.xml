@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+                android:src="@drawable/ieeelogosmall"
+                android:scaleType="center"/>
+
+                <TextView
+                    android:layout_marginTop="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IEEE South Campus"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="casual"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="casual"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="15dp"/>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/highlight_CV"
+            android:layout_margin="15dp">
+
+            <LinearLayout
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/Gray">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IEEE Club"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/highlight_name"
+                    android:gravity="left"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/about_ieee"
+                    android:id="@+id/highlight_info"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="12dp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="casual"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="15dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/call_CV"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Gray">
+                <ImageView
+                android:layout_width="120dp"
+                android:id="@+id/contact_pic"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/stat_sys_phone_call"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp"/>
+
+                <LinearLayout
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call : "
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="   9456411806"
+                            android:textSize="20sp"
+                            android:id="@+id/contact_phone_no"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Tap to Contact "
+                        android:textSize="12sp"
+                        android:textStyle="bold|italic"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/mail_CV"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Gray">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_dialog_email"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="16dp"/>
+
+                <LinearLayout
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  ieeepesitsouth@gmail.com"
+                            android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Tap to Contact "
+                        android:textSize="12sp"
+                        android:textStyle="bold|italic"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/feedbackButton"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/buttons_states"
+            android:text="Send Feedback"
+            android:textColor="#070606"
+            android:textStyle="italic"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="casual"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/buttons_states"
+            android:text="change settings"
+            android:textColor="#070606"
+            android:textStyle="italic"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/buttons_states"
+            android:text="Log out"
+            android:textColor="#070606"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:text="You are Logged in as Subham"/>
+
+    </LinearLayout>
+
+</ScrollView>
