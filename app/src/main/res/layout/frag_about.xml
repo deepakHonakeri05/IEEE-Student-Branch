@@ -2,48 +2,24 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-                android:src="@drawable/ieeelogosmall"
-                android:scaleType="center"/>
-
-                <TextView
-                    android:layout_marginTop="60dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="IEEE South Campus"
-                    android:textSize="25sp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="casual"/>
-
-
-        </LinearLayout>
 
         <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="22sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
             android:layout_marginBottom="15dp"/>
 
         <android.support.v7.widget.CardView
@@ -53,28 +29,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/highlight_CV"
-            android:layout_margin="15dp">
+            android:padding="15dp">
 
             <LinearLayout
                 android:paddingTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/Gray">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="IEEE Club"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
                     android:id="@+id/highlight_name"
                     android:gravity="left"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="25sp"/>
                 <TextView
+                    android:layout_margin="20dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_width="match_parent"
@@ -82,7 +57,7 @@
                     android:textSize="15sp"
                     android:text="@string/about_ieee"
                     android:id="@+id/highlight_info"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:layout_marginBottom="12dp" />
 
             </LinearLayout>
@@ -95,192 +70,247 @@
             android:layout_marginTop="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact Us:"
-            android:textStyle="bold"
+            android:text="Contact Us"
             android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_marginBottom="15dp"/>
 
+
         <android.support.v7.widget.CardView
-            android:id="@+id/call_CV"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="22sp"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/Gray">
-                <ImageView
-                android:layout_width="120dp"
-                android:id="@+id/contact_pic"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/stat_sys_phone_call"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="16dp"/>
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_marginStart="10dp"
+                    android:id="@+id/call_LV"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="20dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:src="@android:drawable/ic_menu_call"
+                                android:tint="@color/colorPrimaryDark"/>
+
+                            <TextView
+                                android:id="@+id/callTV"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Call us :"
+                                android:textSize="15sp"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/black"/>
+                        </LinearLayout>
+
+                    <TextView
+                        android:textSize="10dp"
+                        android:layout_gravity="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap to Contact!"
+                        android:textColor="@android:color/black"
+                        android:textStyle="italic"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mail_CV"
                     android:orientation="vertical"
-                    android:padding="6dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:src="@android:drawable/ic_dialog_email"
+                                android:tint="@color/colorPrimaryDark"/>
+
+                            <TextView
+                                android:id="@+id/clgEmailTV"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Email :"
+                                android:textSize="15sp"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/black"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:textSize="10dp"
+                        android:layout_gravity="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap to Contact!"
+                        android:textColor="@android:color/black"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/feedbackButton"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
-                        <TextView
-                            android:textColor="@android:color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Call : "
-                            android:textSize="16sp"/>
-                        <TextView
-                            android:textColor="@android:color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="   9456411806"
-                            android:textSize="20sp"
-                            android:id="@+id/contact_phone_no"/>
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:src="@android:drawable/ic_dialog_email"
+                                android:tint="@color/colorPrimaryDark"/>
+
+                            <TextView
+                                android:id="@+id/feedBackTV"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="FeedBack :"
+                                android:textSize="15sp"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/black"/>
                     </LinearLayout>
 
                     <TextView
-                        android:layout_marginTop="20dp"
+                        android:textSize="10dp"
+                        android:layout_gravity="end"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"
-                        android:text="Tap to Contact "
-                        android:textSize="12sp"
-                        android:textStyle="bold|italic"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="15dp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+                        android:text="Tap to Contact!"
+                        android:textColor="@android:color/black"
+                        android:textStyle="italic"/>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/mail_CV"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="22sp"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/Gray">
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/ic_dialog_email"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:padding="16dp"/>
+                </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginStart="10dp"
+                    android:id="@+id/rateButton"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="6dp">
+                    android:padding="20dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/star"
+                            android:tint="@color/colorPrimaryDark"/>
 
                         <TextView
-                            android:textColor="@android:color/white"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  ieeepesitsouth@gmail.com"
-                            android:textSize="20sp"/>
+                            android:text="Rate our App !"
+                            android:textSize="15sp"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/black"/>
 
+                    </LinearLayout>
                     <TextView
-                        android:layout_marginTop="20dp"
+                        android:textSize="10dp"
+                        android:layout_gravity="end"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"
-                        android:text="Tap to Contact "
-                        android:textSize="12sp"
-                        android:textStyle="bold|italic"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="15dp"/>
+                        android:text="Tap for More!"
+                        android:textColor="@android:color/black"
+                        android:textStyle="italic"/>
+
                 </LinearLayout>
+
             </LinearLayout>
+
         </android.support.v7.widget.CardView>
 
-        <Button
-            android:id="@+id/feedbackButton"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_gravity="center"
-            android:background="@drawable/buttons_states"
-            android:text="Send Feedback"
-            android:textColor="#070606"
-            android:textStyle="italic"
-            android:layout_marginBottom="10dp"/>
+
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="22sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Account"
-            android:textStyle="bold"
+            android:text="Account Settings"
             android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_marginBottom="10dp"/>
 
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_gravity="center"
-            android:background="@drawable/buttons_states"
-            android:text="change settings"
-            android:textColor="#070606"
-            android:textStyle="italic"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical">
+
+             <TextView
+                 android:id="@+id/resetPwdTV"
+                 android:padding="20dp"
+                 android:textSize="15sp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Change Password"
+                 android:textColor="@android:color/black" />
+
+             <TextView
+                 android:id="@+id/deleteAccountTV"
+                 android:padding="20dp"
+                 android:textSize="15sp"
+                 android:textColor="@android:color/black"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Delete Account"/>
+             </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/logoutButton"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginRight="25dp"
             android:layout_gravity="center"
-            android:background="@drawable/buttons_states"
+            android:background="#E07419"
             android:text="Log out"
-            android:textColor="#070606"
+            android:textColor="@android:color/white"
             android:textStyle="italic"/>
 
         <TextView
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:text="You are Logged in as Subham"/>
+            android:layout_marginTop="10dp"
+            android:text="You are Logged in"/>
 
     </LinearLayout>
 

@@ -1,107 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="#F5F7FA">
 
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:id="@+id/appbar"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:id="@+id/ctolbar"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMargin="20dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:fitsSystemWindows="true"
+                    android:id="@+id/headimage"
+                    app:srcCompat="@drawable/logo"
+                    android:background="@android:color/white"
+                    app:layout_collapseMode="parallax"
+                    android:layout_height="200dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="bottom"/>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/nested"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_weight="1"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginEnd="22dp"
-                    android:layout_marginRight="22dp"
-                    android:text="Welcome"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:layout_marginTop="22dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="30sp"/>
+                    android:layout_margin="20dp"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:text="Welcome Back!"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content" />
 
                 <TextView
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="22sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="thursday 14 march"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textAllCaps="true"
+                    android:text="Calender"
                     android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:id="@+id/dateAndDay"/>
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="15dp"/>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/calenderLL"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:src="@drawable/cal"/>
+
+                        <TextView
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have seen our new Calender? Checkout the calender of events."/>
+
+                        <TextView
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="10dp"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap for More!"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"/>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="15dp"/>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/teamLL"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:src="@drawable/team"/>
+
+                        <TextView
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you met our team yet? If not, what are you waiting for?"/>
+
+                        <TextView
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="10dp"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap for More!"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"/>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Memberships"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="15dp"/>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/membershipLL"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:src="@drawable/member"/>
+
+                        <TextView
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Scrolled all the way down? Do not leave without taking the annual IEEE membership"/>
+
+                        <TextView
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="10dp"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap for More!"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"/>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
 
             </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ieeelogosmall"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="25sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upcoming events"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="25dp"/>
-
-        <include layout="@layout/model_cardview"/>
-
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="25sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upcoming Workshops "
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="25dp"/>
-
-        <include layout="@layout/model_workshop"/>
-
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="22sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Memberships"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:fontFamily="casual"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="25dp"/>
-
-        <include layout="@layout/model_memberships"/>
-
-    </LinearLayout>
-</ScrollView>
+    </android.support.design.widget.CoordinatorLayout>

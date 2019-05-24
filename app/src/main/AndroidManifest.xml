@@ -5,10 +5,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="IEEE SB"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".team_all"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -19,11 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".details_eve_work"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:name=".details"
+            android:theme="@style/AppThemeOrange" />
+        <activity
+            android:name=".calender"
+            android:label="Calender"
+            android:theme="@style/AppThemeOrange" />
     </application>
 
 </manifest>

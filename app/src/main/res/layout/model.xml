@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codathon 2.0!"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"/>
+
+    <TextView
+        android:maxLines="1"
+        android:id="@+id/descTV"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codathon was a successful online coding contest held on 8th of March ,i.e Women's Day.
+        We have had a 100+ registration all across colleges in Karnataka."/>
+
+    <TextView
+        android:textSize="8dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap for Details"
+        android:textColor="@android:color/black"
+        android:textStyle="italic"/>
+
+</LinearLayout>

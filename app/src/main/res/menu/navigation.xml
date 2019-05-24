@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_team"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_team" />
+        android:title="Events/Workshops" />
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="Home" />
 
     <item
         android:id="@+id/navigation_about"
-        android:icon="@android:drawable/ic_menu_info_details"
-        android:title="@string/title_about" />
+        android:icon="@drawable/ic_account_circle_black_36dp"
+        android:title="More" />
 
 </menu>
