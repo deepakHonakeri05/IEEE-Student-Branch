@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.pro.deepak.ieee_ex.R;
 import com.pro.deepak.ieee_ex.calender;
 import com.pro.deepak.ieee_ex.details;
+import com.pro.deepak.ieee_ex.team_all;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,7 +34,7 @@ public class frag_home extends Fragment {
 
     boolean ExpandedActionBar = true;
 
-    LinearLayout calenderLL,memberLL;
+    LinearLayout calenderLL,memberLL,teamLL;
 
 
 
@@ -90,6 +91,15 @@ public class frag_home extends Fragment {
                 Uri uriUrl = Uri.parse(url);
                 Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
                 startActivity(launchBrowser);
+            }
+        });
+
+        teamLL = rootView.findViewById(R.id.teamLL);
+        teamLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent teamInt = new Intent(getActivity(), team_all.class);
+                startActivity(teamInt);
             }
         });
 
