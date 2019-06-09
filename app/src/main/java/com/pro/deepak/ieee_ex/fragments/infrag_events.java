@@ -63,6 +63,7 @@ public class infrag_events extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), details.class);
+                intent.putExtra("type","Events");
                 intent.putExtra("title",upComList.get(position).getTitle());
                 intent.putExtra("description",upComList.get(position).getDesc());
                 intent.putExtra("link",upComList.get(position).getLink());
@@ -71,7 +72,6 @@ public class infrag_events extends Fragment {
                 intent.putExtra("cont3",upComList.get(position).getCont3());
 
                 startActivity(intent);
-                //Toast.makeText(vainglory.this, "Position : "+position, Toast.LENGTH_SHORT).show();//
             }
         });
 
