@@ -1,5 +1,6 @@
 package com.pro.deepak.ieee_ex.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -15,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.pro.deepak.ieee_ex.R;
+import com.pro.deepak.ieee_ex.calender;
 import com.pro.deepak.ieee_ex.data.adapterLV;
 import com.pro.deepak.ieee_ex.data.dataElement;
 import com.pro.deepak.ieee_ex.details;
@@ -25,14 +28,23 @@ import java.util.List;
 public class infrag_workshops extends Fragment {
 
     FirebaseDatabase mFirebaseDatabase;
-    DatabaseReference mDatabaseReferenceUP,mDatabaseReferencePAST;
+    DatabaseReference mDatabaseReference;
 
-    ArrayList<String> listKeysPAST = new ArrayList<String>();
-    ArrayList<String> listKeysUP = new ArrayList<String>();
-    ListView upComingLV,pastLV;
+    String isPast=null;
 
-    List<dataElement> pastList,upComList;
-    adapterLV adapterPAST,adapterUP;
+    ArrayList<String> listKeys = new ArrayList<String>();
+    ListView eventLV;
+
+    List<dataElement> eventList;
+    adapterLV eventAdapter;
+
+    public infrag_workshops() {}
+
+    @SuppressLint("ValidFragment")
+    public infrag_workshops(String isPast)
+    {
+        this.isPast = isPast;
+    }
 
 
     @Override
@@ -41,50 +53,46 @@ public class infrag_workshops extends Fragment {
         View rootView = inflater.inflate(R.layout.infrag_workshops, container, false);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReferenceUP = mFirebaseDatabase.getReference("Workshops/upcoming");
-        mDatabaseReferencePAST = mFirebaseDatabase.getReference("Workshops/past/");
-        pastLV = rootView.findViewById(R.id.pastWorkLV);
-        upComingLV = rootView.findViewById(R.id.upcomingWorkLV);
+        mDatabaseReference = mFirebaseDatabase.getReference("Workshops/"+isPast);
 
-        pastList = new ArrayList<>();
-        upComList = new ArrayList<>();
+        eventLV = rootView.findViewById(R.id.upcomingWorkLV);
+        eventList = new ArrayList<>();
+        eventAdapter = new adapterLV(getActivity(), R.layout.model,eventList);
+        eventLV.setAdapter(eventAdapter);
 
-        adapterPAST = new adapterLV(getActivity(), R.layout.model,pastList);
-        pastLV.setAdapter(adapterPAST);
-
-        adapterUP = new adapterLV(getActivity(), R.layout.model,upComList);
-        upComingLV.setAdapter(adapterUP);
-
-        addChildEventListener();
-        addChildEventListenerUP();
+        TextView placeHolder = rootView.findViewById(R.id.placeHolderWorkshop);
+        placeHolder.setText(isPast+" Workshops");
 
 
-        upComingLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), details.class);
-                intent.putExtra("type","Workshops");
-                intent.putExtra("title",upComList.get(position).getTitle());
-                intent.putExtra("description",upComList.get(position).getDesc());
-                intent.putExtra("link",upComList.get(position).getLink());
-                intent.putExtra("cont1",upComList.get(position).getCont1());
-                intent.putExtra("cont2",upComList.get(position).getCont2());
-                intent.putExtra("cont3",upComList.get(position).getCont3());
+        if (isPast.equals("past")) {
+            addChildEventListener();
+            eventLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getActivity(), details.class);
 
-                startActivity(intent);
-            }
-        });
+                    //startActivity(intent);
+                }
+            });
+        }
+        else {
+            addChildEventListenerUPComing();
+            eventLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getActivity(), details.class);
+                    intent.putExtra("type","Workshops");
+                    intent.putExtra("title",eventList.get(position).getTitle());
+                    intent.putExtra("description",eventList.get(position).getDesc());
+                    intent.putExtra("link",eventList.get(position).getLink());
+                    intent.putExtra("cont1",eventList.get(position).getCont1());
+                    intent.putExtra("cont2",eventList.get(position).getCont2());
+                    intent.putExtra("cont3",eventList.get(position).getCont3());
 
-        pastLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), details.class);
-                intent.putExtra("title",pastList.get(position).getTitle());
-                intent.putExtra("description",pastList.get(position).getDesc());
-                startActivity(intent);
-            }
-        });
-
+                    startActivity(intent);
+                }
+            });
+        }
 
 
         return rootView;
@@ -101,11 +109,8 @@ public class infrag_workshops extends Fragment {
                 dataElement model = dataSnapshot.getValue(dataElement.class);
                 model.setTitleD((String)dataSnapshot.child("Title").getValue());
                 model.setDesc((String)dataSnapshot.child("Desc").getValue());
-                listKeysPAST.add(dataSnapshot.getKey());
-                adapterPAST.add(model);
-
-                //model.setLink((String)dataSnapshot.child("link").getValue());
-
+                listKeys.add(dataSnapshot.getKey());
+                eventAdapter.add(model);
 
             }
 
@@ -121,11 +126,11 @@ public class infrag_workshops extends Fragment {
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 String key = dataSnapshot.getKey();
-                int index = listKeysPAST.indexOf(key);
+                int index = listKeys.indexOf(key);
 
                 if (index != -1) {
-                    pastList.remove(index);
-                    listKeysPAST.remove(index);
+                    eventList.remove(index);
+                    listKeys.remove(index);
                 }
             }
 
@@ -133,11 +138,11 @@ public class infrag_workshops extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-        mDatabaseReferencePAST.addChildEventListener(childListener);
+        mDatabaseReference.addChildEventListener(childListener);
 
     }
 
-    private void addChildEventListenerUP()
+    private void addChildEventListenerUPComing()
     {
 
         ChildEventListener childListener = new ChildEventListener() {
@@ -154,8 +159,8 @@ public class infrag_workshops extends Fragment {
                 model.setCont2((String)dataSnapshot.child("cont2").getValue());
                 model.setCont3((String)dataSnapshot.child("cont3").getValue());
 
-                listKeysUP.add(dataSnapshot.getKey());
-                adapterUP.add(model);
+                listKeys.add(dataSnapshot.getKey());
+                eventAdapter.add(model);
 
             }
 
@@ -171,11 +176,11 @@ public class infrag_workshops extends Fragment {
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 String key = dataSnapshot.getKey();
-                int index = listKeysUP.indexOf(key);
+                int index = listKeys.indexOf(key);
 
                 if (index != -1) {
-                    pastList.remove(index);
-                    listKeysUP.remove(index);
+                    eventList.remove(index);
+                    listKeys.remove(index);
                 }
             }
 
@@ -183,7 +188,7 @@ public class infrag_workshops extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         };
-        mDatabaseReferenceUP.addChildEventListener(childListener);
+        mDatabaseReference.addChildEventListener(childListener);
 
     }
 }

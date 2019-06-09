@@ -53,15 +53,6 @@ public class details extends AppCompatActivity {
         descTV = findViewById(R.id.eventDescTV);
         descTV.setText(description);
 
-//        if(mTitle.contains("Quiz"))
-//            eventIV.setImageResource(R.drawable.techqilla);
-//        else if(mTitle.contains("War"))
-//            eventIV.setImageResource(R.drawable.witwar);
-//        else if(mTitle.contains("Robo"))
-//            eventIV.setImageResource(R.drawable.robotics);
-//        else
-//            eventIV.setVisibility(View.GONE);
-
         eventIV = findViewById(R.id.eventIV);
         pathReference.child(mTitle+"/").child("eventPoster.jpeg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override

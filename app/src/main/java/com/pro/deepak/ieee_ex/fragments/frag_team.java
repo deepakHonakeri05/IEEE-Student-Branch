@@ -88,10 +88,10 @@ public class frag_team extends Fragment {
 
             switch (position) {
                 case 0:
-                    infrag_events events_tab = new infrag_events();
+                    infrag_events events_tab = new infrag_events("upcoming");
                     return events_tab;
                 case 1:
-                    infrag_workshops workshops_tab = new infrag_workshops();
+                    infrag_workshops workshops_tab = new infrag_workshops("upcoming");
                     return workshops_tab;
                 default:
                     return null;

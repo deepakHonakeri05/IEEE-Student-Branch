@@ -34,16 +34,17 @@
 
         <TextView
             android:layout_below="@id/headerCV1"
-            android:id="@+id/placeHolderUPCOM1"
+            android:id="@+id/placeHolderWorkshop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:textAllCaps="true"
             android:layout_marginStart="20dp"
             android:text="Upcoming Workshops"
             android:textSize="18sp"/>
 
         <android.support.v7.widget.CardView
-            android:layout_below="@id/placeHolderUPCOM1"
+            android:layout_below="@id/placeHolderWorkshop"
             android:id="@+id/upcv"
             android:layout_margin="20dp"
             android:layout_width="match_parent"
@@ -59,28 +60,6 @@
 
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_below="@id/upcv"
-            android:id="@+id/placeHolderPAST1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:text="Past Workshops"
-            android:textSize="18sp"/>
-
-        <android.support.v7.widget.CardView
-            android:layout_below="@id/placeHolderPAST1"
-            android:layout_margin="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/pastWorkLV"/>
-
-        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 

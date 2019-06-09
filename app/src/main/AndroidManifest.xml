@@ -26,10 +26,14 @@
             android:name=".calender"
             android:label="Calender"
             android:theme="@style/AppThemeOrange" />
+        <activity
+            android:name=".team_all"
+            android:label="Team"
+            android:theme="@style/AppThemeOrange" />
+        <activity
+            android:name=".galleryActivity"
+            android:theme="@style/AppThemeOrange.NoActionBar"/>
 
-        <activity android:name=".team_all"
-                  android:label= "Team"
-                android:theme="@style/AppThemeOrange"/>
     </application>
 
 </manifest>
