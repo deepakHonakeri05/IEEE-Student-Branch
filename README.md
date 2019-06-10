@@ -3,4 +3,4 @@ Prototype design for IEEE PESU-ECC App
 
 ##Gallery
 
-![Sample Screenshots ](./screenshot.jpg){:height="400px" width="400px"}
+![test image size ](./screenshot.jpg){:height="400px" width="400px"}
