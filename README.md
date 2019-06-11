@@ -1,4 +1,4 @@
-# ieee_ex
+# IEEE Student Branch app
 Prototype design for IEEE PESU-ECC App
 
 ##Gallery
