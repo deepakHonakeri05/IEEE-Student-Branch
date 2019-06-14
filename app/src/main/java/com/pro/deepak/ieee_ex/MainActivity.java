@@ -1,11 +1,14 @@
 package com.pro.deepak.ieee_ex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.pro.deepak.ieee_ex.fragments.frag_about;
 import com.pro.deepak.ieee_ex.fragments.frag_home;
@@ -14,6 +17,7 @@ import com.pro.deepak.ieee_ex.fragments.frag_team;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView navigation;
+    private FirebaseAuth mAuth;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -57,12 +61,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        mAuth = FirebaseAuth.getInstance();
 
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser == null)
+        {
+            startActivity(new Intent(this, login_activity.class));
+            finish();
+            return;
+        }
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
+
     }
 
 }

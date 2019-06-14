@@ -11,12 +11,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.pro.deepak.ieee_ex.R;
+import com.pro.deepak.ieee_ex.login_activity;
 
 public class frag_about extends Fragment {
 
@@ -117,7 +119,10 @@ public class frag_about extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity(), login_activity.class));
+                getActivity().finish();
+                return;
             }
         });
 

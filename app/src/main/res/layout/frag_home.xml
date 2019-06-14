@@ -61,7 +61,7 @@
                     android:layout_margin="20dp"
                     android:textSize="25sp"
                     android:textStyle="italic"
-                    android:text="Welcome Back!"
+                    android:text="Dashboard"
                     android:textColor="@android:color/black"
                     android:layout_height="wrap_content" />
 
