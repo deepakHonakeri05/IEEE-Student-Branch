@@ -13,10 +13,12 @@
     app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
+        android:id="@+id/headerPlaceHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/loginHeader"
-        android:text="SignIn "
+        android:text="LOGIN"
+        android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="@dimen/loginViewsMargin"/>
 
@@ -54,8 +56,9 @@
         android:layout_marginTop="@dimen/loginViewsMargin"/>
 
     <TextView
-        android:id="@+id/makeNewRegistrationsTV"
+        android:id="@+id/addNewRegistrationsTV"
         style="@style/parent"
+        android:textSize="16sp"
         android:textAlignment="textEnd"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"

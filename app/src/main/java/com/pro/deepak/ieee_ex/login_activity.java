@@ -2,6 +2,7 @@ package com.pro.deepak.ieee_ex;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class login_activity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class login_activity extends AppCompatActivity {
 
     EditText emailET,passwordET;
 
-    TextView addRegistrationsTV;
+    TextView headerTV,addRegistrationsTV;
     private ProgressDialog progressDialog;
 
 
@@ -35,12 +37,14 @@ public class login_activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
+        headerTV = findViewById(R.id.headerPlaceHolder);
+        headerTV.setText("LogIn");
 
         emailET = findViewById(R.id.editTextEmail);
         passwordET = findViewById(R.id.editTextPassword);
 
 
-        addRegistrationsTV = findViewById(R.id.makeNewRegistrationsTV);
+        addRegistrationsTV = findViewById(R.id.addNewRegistrationsTV);
         addRegistrationsTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,8 +69,8 @@ public class login_activity extends AppCompatActivity {
         email = emailET.getText().toString();
         password = passwordET.getText().toString();
 
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email) || email.contains("@")) {
+            Toast.makeText(getApplicationContext(), "Enter Valid Email", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
@@ -74,21 +78,40 @@ public class login_activity extends AppCompatActivity {
             return;
         }
 
+        progressDialog.setMessage("Preparing Your Dashboard");
+        progressDialog.show();
+
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            progressDialog.setMessage("Preparing Your Dashboard");
-                            progressDialog.show();
-                            Intent intent = new Intent(login_activity.this, MainActivity.class);
-                            startActivity(intent);
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                checkAndLogInUser();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+                    });
+
+
+    }
+
+    private void checkAndLogInUser()
+    {
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if(user.isEmailVerified())
+        {
+            Intent intent = new Intent(login_activity.this, MainActivity.class);
+            startActivity(intent);
+        }
+
+        else {
+            Toast.makeText(getApplicationContext(), "Verify E-Mail " + user.getEmail(), Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+        }
+
     }
 
 }
