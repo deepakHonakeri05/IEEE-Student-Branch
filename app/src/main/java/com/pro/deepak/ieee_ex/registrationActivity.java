@@ -80,7 +80,7 @@ public class registrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             progressDialog.setMessage("Sending Email Verification");
-                            progressDialog.show();:
+                            progressDialog.show();
                             sendVerificationEmail();
 
                         } else {
