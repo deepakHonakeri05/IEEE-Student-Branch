@@ -64,7 +64,7 @@ public class registrationActivity extends AppCompatActivity {
         email = emailEdit.getText().toString();
         password = passwordEditText.getText().toString();
 
-        if (TextUtils.isEmpty(email)&& email.contains("@")) {
+        if (TextUtils.isEmpty(email) && !email.contains("@")) {
             Toast.makeText(getApplicationContext(), "Enter Vaild E-mail", Toast.LENGTH_LONG).show();
             return;
         }

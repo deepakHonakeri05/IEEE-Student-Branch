@@ -69,7 +69,7 @@ public class login_activity extends AppCompatActivity {
         email = emailET.getText().toString();
         password = passwordET.getText().toString();
 
-        if (TextUtils.isEmpty(email) || email.contains("@")) {
+        if (TextUtils.isEmpty(email) || !email.contains("@")) {
             Toast.makeText(getApplicationContext(), "Enter Valid Email", Toast.LENGTH_LONG).show();
             return;
         }
