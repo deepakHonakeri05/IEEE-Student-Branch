@@ -78,14 +78,13 @@ public class login_activity extends AppCompatActivity {
             return;
         }
 
-        progressDialog.setMessage("Preparing Your Dashboard");
-        progressDialog.show();
-
         mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                progressDialog.setMessage("Preparing Your Dashboard");
+                                progressDialog.show();
                                 checkAndLogInUser();
                             }
                             else {
