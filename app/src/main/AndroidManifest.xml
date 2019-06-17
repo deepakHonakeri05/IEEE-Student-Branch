@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pro.deepak.ieee_ex">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -20,15 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".login_activity"
+        <activity
+            android:name=".login_activity"
             android:noHistory="true"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".registrationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".registrationActivity"
             android:noHistory="true"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".details"
             android:theme="@style/AppThemeOrange" />
@@ -43,6 +40,8 @@
         <activity
             android:name=".galleryActivity"
             android:theme="@style/AppThemeOrange.NoActionBar" />
+        <activity android:name=".changePassword"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

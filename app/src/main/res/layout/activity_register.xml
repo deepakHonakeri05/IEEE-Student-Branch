@@ -7,6 +7,6 @@
     android:background="@drawable/imageedit_1_2298952415"
     tools:context=".login_activity">
 
-    <include layout="@layout/layout_login"/>
+    <include layout="@layout/layout_register"/>
 
 </android.support.constraint.ConstraintLayout>
