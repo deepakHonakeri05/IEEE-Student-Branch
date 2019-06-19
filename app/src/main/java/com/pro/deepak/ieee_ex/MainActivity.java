@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                             .beginTransaction()
                             .replace(R.id.fragment_container, homeTAB)
                             .commit();
+                    navigation.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
 
                     return true;
                 case R.id.navigation_about:

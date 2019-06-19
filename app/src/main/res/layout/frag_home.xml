@@ -5,46 +5,46 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F7FA">
+        android:background="@color/MYBG">
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            android:id="@+id/appbar"
-            android:theme="@style/AppTheme.AppBarOverlay">
+        <!--<android.support.design.widget.AppBarLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fitsSystemWindows="true"-->
+            <!--android:id="@+id/appbar"-->
+            <!--android:theme="@style/AppTheme.AppBarOverlay">-->
 
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:id="@+id/ctolbar"
-                android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMargin="20dp"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                android:layout_height="match_parent">
+            <!--<android.support.design.widget.CollapsingToolbarLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:id="@+id/ctolbar"-->
+                <!--android:fitsSystemWindows="true"-->
+                <!--app:contentScrim="?attr/colorPrimary"-->
+                <!--app:expandedTitleMargin="20dp"-->
+                <!--app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"-->
+                <!--android:layout_height="match_parent">-->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:contentDescription="@string/app_name"
-                    android:fitsSystemWindows="true"
-                    android:id="@+id/headimage"
-                    app:srcCompat="@drawable/logo"
-                    android:background="@android:color/white"
-                    app:layout_collapseMode="parallax"
-                    android:layout_height="200dp" />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:layout_gravity="bottom"/>
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:contentDescription="@string/app_name"-->
+                    <!--android:fitsSystemWindows="true"-->
+                    <!--android:id="@+id/headimage"-->
+                    <!--app:srcCompat="@drawable/logo"-->
+                    <!--android:background="@android:color/white"-->
+                    <!--app:layout_collapseMode="parallax"-->
+                    <!--android:layout_height="200dp" />-->
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="160dp"-->
+                    <!--android:layout_gravity="bottom"/>-->
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-            </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
+                <!--<android.support.v7.widget.Toolbar-->
+                    <!--android:id="@+id/toolbar"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="?attr/actionBarSize"-->
+                    <!--app:layout_collapseMode="pin"-->
+                    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+            <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+        <!--</android.support.design.widget.AppBarLayout>-->
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -78,6 +78,8 @@
 
 
                 <android.support.v7.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="23dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
@@ -98,14 +100,15 @@
                             android:src="@drawable/cal"/>
 
                         <TextView
+
                             android:padding="20dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Have seen our new Calender? Checkout the calender of events."/>
 
                         <TextView
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginBottom="5dp"
                             android:textSize="10dp"
                             android:layout_gravity="end"
@@ -131,6 +134,8 @@
 
 
                 <android.support.v7.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="23dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
@@ -157,8 +162,8 @@
                             android:text="Have you met our team yet? If not, what are you waiting for?"/>
 
                         <TextView
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginBottom="5dp"
                             android:textSize="10dp"
                             android:layout_gravity="end"
@@ -185,6 +190,8 @@
 
 
                 <android.support.v7.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="23dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
@@ -208,11 +215,12 @@
                             android:padding="20dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
                             android:text="Our new Gallery"/>
 
                         <TextView
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginBottom="5dp"
                             android:textSize="10dp"
                             android:layout_gravity="end"
@@ -239,6 +247,8 @@
 
 
                 <android.support.v7.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="23dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
@@ -265,8 +275,8 @@
                             android:text="Scrolled all the way down? Do not leave without taking the annual IEEE membership"/>
 
                         <TextView
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginBottom="5dp"
                             android:textSize="10dp"
                             android:layout_gravity="end"

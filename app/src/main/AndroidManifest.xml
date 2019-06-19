@@ -28,18 +28,19 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".details"
-            android:theme="@style/AppThemeOrange" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".calender"
             android:label="Calender"
-            android:theme="@style/AppThemeOrange" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".team_all"
             android:label="Team"
-            android:theme="@style/AppThemeOrange" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".galleryActivity"
-            android:theme="@style/AppThemeOrange.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".changePassword"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

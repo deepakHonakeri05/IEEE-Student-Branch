@@ -51,28 +51,28 @@ public class frag_home extends Fragment {
 //        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
 
-        Appbar = (AppBarLayout)rootView.findViewById(R.id.appbar);
-        CoolToolbar = (CollapsingToolbarLayout)rootView.findViewById(R.id.ctolbar);
-        toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
-
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-
-        Appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-
-                if (Math.abs(verticalOffset) > 200){
-                    ExpandedActionBar = false;
-                    CoolToolbar.setTitle("IEEE PESIT South Student Branch");
-                    //invalidateOptionsMenu();
-                } else {
-                    ExpandedActionBar = true;
-                    CoolToolbar.setTitle("");
-                    //invalidateOptionsMenu();
-                }
-
-            }
-        });
+//        Appbar = (AppBarLayout)rootView.findViewById(R.id.appbar);
+//        CoolToolbar = (CollapsingToolbarLayout)rootView.findViewById(R.id.ctolbar);
+//        toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+//
+//        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+//
+//        Appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//            @Override
+//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//
+//                if (Math.abs(verticalOffset) > 200){
+//                    ExpandedActionBar = false;
+//                    CoolToolbar.setTitle("IEEE PESIT South Student Branch");
+//                    //invalidateOptionsMenu();
+//                } else {
+//                    ExpandedActionBar = true;
+//                    CoolToolbar.setTitle("");
+//                    //invalidateOptionsMenu();
+//                }
+//
+//            }
+//        });
 
         calenderLL = rootView.findViewById(R.id.calenderLL);
         calenderLL.setOnClickListener(new View.OnClickListener() {
