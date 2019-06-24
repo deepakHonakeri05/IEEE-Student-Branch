@@ -88,7 +88,7 @@ public class login_activity extends AppCompatActivity {
                                 checkAndLogInUser();
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Check E-mail/Password!", Toast.LENGTH_LONG).show();
                             }
                         }
                     });

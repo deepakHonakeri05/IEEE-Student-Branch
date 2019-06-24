@@ -28,6 +28,7 @@ public class registrationActivity extends AppCompatActivity {
     TextView headerTV,addNewRegistrationsTV;
     private ProgressDialog progressDialog;
 
+    private String email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class registrationActivity extends AppCompatActivity {
 
     private void  registerNewUser() {
 
-        String email, password;
+
 
         email = emailEdit.getText().toString();
         password = passwordEditText.getText().toString();
@@ -105,13 +106,16 @@ public class registrationActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // after email is sent just logout the user and finish this activity
                             Toast.makeText(getApplicationContext(), "Verification E-Mail sent : "+user.getEmail(), Toast.LENGTH_LONG).show();
-                            FirebaseAuth.getInstance().signOut();
-                            startActivity(new Intent(registrationActivity.this, MainActivity.class));
-                            finish();
+//                            FirebaseAuth.getInstance().signOut();
+                            Intent addUSerDataInt = new Intent(registrationActivity.this, addUserDetails.class);
+                            addUSerDataInt.putExtra("email",email);
+                            startActivity(addUSerDataInt);
+//                            finish();
                         }
                         else
                         {
                             // email not sent, so display message and restart the activity or do whatever you wish to do
+                            Toast.makeText(getApplicationContext(), "Failed to send E-mail!", Toast.LENGTH_LONG).show();
 
                             //restart this activity
                             overridePendingTransition(0, 0);
