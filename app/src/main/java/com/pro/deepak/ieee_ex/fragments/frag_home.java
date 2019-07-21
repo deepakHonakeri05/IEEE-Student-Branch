@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -13,6 +14,9 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,52 +38,26 @@ public class frag_home extends Fragment {
     Toolbar toolbar;
 
     boolean ExpandedActionBar = true;
+    ImageView galleryIV,calenderIV;
 
-    LinearLayout calenderLL,memberLL,teamLL,galleryLL;
-
+    LinearLayout memberLL,teamLL;  //calenderCV, galleryLL;
+    CardView galleryLL,calenderLL;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_home, container, false);
+        Animation pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse);
 
-//        dateAndDayTextView=(TextView)rootView.findViewById(R.id.dateAndDay);
-//        SimpleDateFormat sdf = new SimpleDateFormat("EEEE d MMMM");
-//        dateAndDayTextView.setText(sdf.format(calendar.getTime()));
-//
-//        Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
-//        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-
-
-//        Appbar = (AppBarLayout)rootView.findViewById(R.id.appbar);
-//        CoolToolbar = (CollapsingToolbarLayout)rootView.findViewById(R.id.ctolbar);
-//        toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
-//
-//        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-//
-//        Appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-//            @Override
-//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-//
-//                if (Math.abs(verticalOffset) > 200){
-//                    ExpandedActionBar = false;
-//                    CoolToolbar.setTitle("IEEE PESIT South Student Branch");
-//                    //invalidateOptionsMenu();
-//                } else {
-//                    ExpandedActionBar = true;
-//                    CoolToolbar.setTitle("");
-//                    //invalidateOptionsMenu();
-//                }
-//
-//            }
-//        });
-
-        calenderLL = rootView.findViewById(R.id.calenderLL);
+        calenderIV = rootView.findViewById(R.id.calenderIV);
+        calenderLL = rootView.findViewById(R.id.calenderCV);
         calenderLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent calInt = new Intent(getActivity(), calender.class);
-                startActivity(calInt);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(getActivity(), calenderIV, "calender");
+                startActivity(calInt,options.toBundle());
             }
         });
 
@@ -104,12 +82,15 @@ public class frag_home extends Fragment {
             }
         });
 
-        galleryLL = rootView.findViewById(R.id.galleryLL);
+        galleryIV = rootView.findViewById(R.id.galleryIV);
+        galleryLL = rootView.findViewById(R.id.galleryCV);
         galleryLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent galleryInt = new Intent(getActivity(), galleryActivity.class);
-                startActivity(galleryInt);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(getActivity(), galleryIV, "gallery");
+                startActivity(galleryInt,options.toBundle());
             }
         });
 

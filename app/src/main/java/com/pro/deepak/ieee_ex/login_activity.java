@@ -2,12 +2,13 @@ package com.pro.deepak.ieee_ex;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,12 +22,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class login_activity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-
+    FirebaseAuth mAuth;
     EditText emailET,passwordET;
-
-    TextView headerTV,addRegistrationsTV;
-    private ProgressDialog progressDialog;
+    TextView headerTV,addRegistrationsTV,loginPlaceholderText;
+    ProgressDialog progressDialog;
+    Animation button_anim1,button_anim2;
 
 
     @Override
@@ -36,15 +36,25 @@ public class login_activity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
+        emailET = findViewById(R.id.editTextEmail);
+        passwordET = findViewById(R.id.editTextPassword);
+        loginPlaceholderText = findViewById(R.id.headerPlaceHolder);
+        addRegistrationsTV = findViewById(R.id.addNewRegistrationsTV);
+        final Button login = findViewById(R.id.LoginButton);
+
+
+        button_anim1 = AnimationUtils.loadAnimation(this, R.anim.button_anim1);
+        button_anim2 = AnimationUtils.loadAnimation(this, R.anim.button_anim2);
+
+        loginPlaceholderText.startAnimation(button_anim1);
+        emailET.startAnimation(button_anim2);
+        passwordET.startAnimation(button_anim2);
+        login.startAnimation(button_anim2);
+        addRegistrationsTV.startAnimation(button_anim2);
 
         headerTV = findViewById(R.id.headerPlaceHolder);
         headerTV.setText("LogIn");
 
-        emailET = findViewById(R.id.editTextEmail);
-        passwordET = findViewById(R.id.editTextPassword);
-
-
-        addRegistrationsTV = findViewById(R.id.addNewRegistrationsTV);
         addRegistrationsTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +63,6 @@ public class login_activity extends AppCompatActivity {
             }
         });
 
-        final Button login = findViewById(R.id.LoginButton);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

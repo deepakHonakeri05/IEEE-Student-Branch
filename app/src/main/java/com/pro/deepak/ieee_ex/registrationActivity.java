@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class registrationActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     private String email, password;
+    Animation button_anim1,button_anim2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,17 @@ public class registrationActivity extends AppCompatActivity {
 
         emailEdit = findViewById(R.id.editTextEmail);
         passwordEditText = findViewById(R.id.editTextPassword);
-
         registerButton = findViewById(R.id.LoginButton);
+
+
+        button_anim1 = AnimationUtils.loadAnimation(this, R.anim.button_anim1);
+        button_anim2 = AnimationUtils.loadAnimation(this, R.anim.button_anim2);
+
+        headerTV.startAnimation(button_anim1);
+        emailEdit.startAnimation(button_anim2);
+        passwordEditText.startAnimation(button_anim2);
+        registerButton.startAnimation(button_anim2);
+
         registerButton.setText("Register");
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,10 +102,6 @@ public class registrationActivity extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
     }
 
     private void sendVerificationEmail()
@@ -135,5 +143,4 @@ public class registrationActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-    }
-
+}

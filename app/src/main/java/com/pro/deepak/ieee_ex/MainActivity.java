@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
+import android.transition.Transition;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

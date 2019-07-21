@@ -29,8 +29,6 @@ public class galleryActivity extends AppCompatActivity {
 
     }
 
-
-
     public class MyPagerAdapter extends FragmentStatePagerAdapter
     {
         MyPagerAdapter(FragmentManager fm){
