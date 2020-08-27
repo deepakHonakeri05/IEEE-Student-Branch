@@ -8,9 +8,9 @@ Prototype design for IEEE PESU-ECC App
 
 ## Gallery
 <p align="center">
-<img src="./screenshots/s1.png" width="200" height="350">
-<img src="./screenshots/s2.png" width="200" height="350">
-<img src="./screenshots/s3.jpg" width="200" height="350">
-<img src="./screenshots/s4.png" width="200" height="350">
-<img src="./screenshots/s5.ong" width="200" height="350">
+<img src="./screenshots/s1.png" width="250" height="500">
+<img src="./screenshots/s2.png" width="250" height="500">
+<img src="./screenshots/s3.png" width="250" height="500">
+<img src="./screenshots/s4.png" width="250" height="500">
+<img src="./screenshots/s5.png" width="250" height="500">
 </p>
